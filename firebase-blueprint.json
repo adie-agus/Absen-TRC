@@ -1,0 +1,53 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "Stores professional profile information for TRC BPBD KP staff.",
+      "type": "object",
+      "properties": {
+        "nik": { "type": "string", "description": "Nomor Induk Kependudukan used as unique identifier." },
+        "name": { "type": "string", "description": "Full name of the staff member." },
+        "role": { "type": "string", "description": "Job role within BPBD KP." },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["nik", "name"]
+    },
+    "absensi": {
+      "title": "Attendance Record",
+      "description": "Records daily clock-in and clock-out events.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Reference to the user profile ID." },
+        "date": { "type": "string", "description": "ISO date string (YYYY-MM-DD)." },
+        "masuk": { "type": "string", "format": "date-time", "description": "Clock-in time." },
+        "pulang": { "type": "string", "format": "date-time", "description": "Clock-out time." },
+        "status": { "type": "string", "enum": ["hadir", "terlambat", "pulang"], "description": "Current status for the day." },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Server timestamp for sorting." }
+      },
+      "required": ["userId", "date", "masuk"]
+    },
+    "nik_lookup": {
+      "title": "NIK Lookup",
+      "description": "Mapping of NIK to User UID for uniqueness validation.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The UID associated with this NIK." }
+      },
+      "required": ["uid"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "Staff member profile documents."
+    },
+    "/absensi/{absensiId}": {
+      "schema": "absensi",
+      "description": "Daily attendance logs."
+    },
+    "/nik_lookup/{nik}": {
+      "schema": "nik_lookup",
+      "description": "Registry of NIKs to ensure uniqueness across the system."
+    }
+  }
+}

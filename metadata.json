@@ -1,0 +1,6 @@
+{
+  "name": "ABSENSI TRC BPBD KP",
+  "description": "Aplikasi absensi sederhana dan profesional untuk TRC BPBD KP dengan fitur clock-in, clock-out, dan riwayat 60 hari.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
