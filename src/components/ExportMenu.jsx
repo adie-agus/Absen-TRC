@@ -272,7 +272,7 @@ export default function ExportMenu({ userId, userName }) {
     <div>
       <button 
         onClick={() => setIsOpen(true)}
-        className="flex items-center space-x-2 bg-slate-800 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-slate-700 transition-colors shadow-lg shadow-slate-800/10"
+        className="flex items-center space-x-2 bg-orange-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-orange-700 transition-colors shadow-lg shadow-orange-600/10"
       >
         <Download size={18} />
         <span>DOWNLOAD RIWAYAT</span>
@@ -313,7 +313,7 @@ export default function ExportMenu({ userId, userName }) {
                       type="date" 
                       value={startDate}
                       onChange={(e) => setStartDate(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-100 rounded-xl py-3 pl-10 pr-4 font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-xl py-3 pl-10 pr-4 font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-600/20"
                     />
                   </div>
                 </div>
@@ -325,7 +325,7 @@ export default function ExportMenu({ userId, userName }) {
                       type="date" 
                       value={endDate}
                       onChange={(e) => setEndDate(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-100 rounded-xl py-3 pl-10 pr-4 font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-xl py-3 pl-10 pr-4 font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-600/20"
                     />
                   </div>
                 </div>

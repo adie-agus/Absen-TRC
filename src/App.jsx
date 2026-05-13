@@ -74,19 +74,28 @@ export default function App() {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <header className="bg-blue-800 text-white p-4 shadow-md sticky top-0 z-10">
+            <header className="bg-orange-600 text-white p-4 shadow-lg sticky top-0 z-10">
               <div className="max-w-4xl mx-auto flex justify-between items-center">
-                <div>
-                  <h1 className="font-bold text-lg md:text-xl">ABSENSI TRC BPBD KP</h1>
-                  <p className="text-xs opacity-80">{user.displayName || user.email?.split('@')[0]}</p>
+                <div className="flex items-center space-x-3">
+                  <div>
+                    <h1 className="font-black text-sm md:text-base leading-tight tracking-tight uppercase">
+                      TRC BPBD<br />KULON PROGO
+                    </h1>
+                  </div>
                 </div>
-                <button
-                  onClick={handleLogout}
-                  className="p-2 hover:bg-blue-700 rounded-full transition-colors"
-                  aria-label="Logout"
-                >
-                  <LogOut size={20} />
-                </button>
+                <div className="flex items-center space-x-4">
+                  <div className="text-right hidden sm:block">
+                    <p className="text-[10px] font-black uppercase opacity-60 leading-none mb-1">Pengguna</p>
+                    <p className="text-xs font-bold leading-none">{user.displayName || user.email?.split('@')[0]}</p>
+                  </div>
+                  <button
+                    onClick={handleLogout}
+                    className="p-2.5 bg-white/20 hover:bg-white/30 rounded-xl transition-all active:scale-95"
+                    aria-label="Logout"
+                  >
+                    <LogOut size={18} />
+                  </button>
+                </div>
               </div>
             </header>
             <main className="max-w-4xl mx-auto p-4 md:p-6">

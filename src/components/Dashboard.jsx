@@ -209,13 +209,13 @@ export default function Dashboard({ user }) {
               </button>
               
               <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 ${
-                modalData.type === 'masuk' ? 'bg-green-100 text-green-600' : 'bg-blue-100 text-blue-600'
+                modalData.type === 'masuk' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'
               }`}>
                 {modalData.type === 'masuk' ? <CheckCircle size={40} /> : <Smile size={40} />}
               </div>
               
               <h3 className={`text-xl font-black mb-4 ${
-                modalData.type === 'masuk' ? 'text-green-600' : 'text-blue-600'
+                modalData.type === 'masuk' ? 'text-green-600' : 'text-orange-600'
               }`}>
                 {modalData.title}
               </h3>
@@ -229,7 +229,7 @@ export default function Dashboard({ user }) {
               <button
                 onClick={() => setShowModal(false)}
                 className={`w-full py-4 rounded-2xl font-bold text-white transition-all active:scale-95 shadow-lg ${
-                  modalData.type === 'masuk' ? 'bg-green-600 shadow-green-600/20' : 'bg-blue-600 shadow-blue-600/20'
+                  modalData.type === 'masuk' ? 'bg-green-600 shadow-green-600/20' : 'bg-orange-600 shadow-orange-600/20'
                 }`}
               >
                 OK!
@@ -240,8 +240,8 @@ export default function Dashboard({ user }) {
       </AnimatePresence>
       {/* Real-time Clock Card */}
       <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col items-center text-center">
-        <div className="p-3 bg-blue-50 rounded-2xl mb-4">
-          <Clock className="text-blue-600 w-8 h-8" />
+        <div className="p-3 bg-orange-50 rounded-2xl mb-4">
+          <Clock className="text-orange-600 w-8 h-8" />
         </div>
         <h2 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tighter">{formatTime(currentTime)}</h2>
         <p className="text-slate-500 font-medium mt-2">{formatDate(currentTime)}</p>
@@ -250,7 +250,7 @@ export default function Dashboard({ user }) {
       {/* Attendance Status & Actions */}
       <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
         <div className="flex items-center space-x-2 mb-6">
-          <CheckCircle className="text-green-500 w-5 h-5" />
+          <CheckCircle className="text-orange-500 w-5 h-5" />
           <h3 className="font-bold text-slate-700 uppercase tracking-wide text-sm">Status Hari Ini</h3>
         </div>
 
@@ -302,7 +302,7 @@ export default function Dashboard({ user }) {
       <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div className="flex items-center space-x-2">
-            <Calendar className="text-blue-500 w-5 h-5" />
+            <Calendar className="text-orange-500 w-5 h-5" />
             <h3 className="font-bold text-slate-700 uppercase tracking-wide text-sm">Riwayat 60 Hari Terakhir</h3>
           </div>
           <ExportMenu userId={user.uid} userName={user.displayName || 'Anggota TRC'} />

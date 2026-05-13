@@ -81,9 +81,9 @@ export default function History({ userId, refreshTrigger }) {
     const targetMasuk = new Date(item.masuk);
     targetMasuk.setHours(8, 0, 0, 0);
     
-    if (masukDate > targetMasuk) return 'bg-amber-50 text-amber-600';
+    if (masukDate > targetMasuk) return 'bg-orange-50 text-orange-600';
     if (item.pulang) return 'bg-green-50 text-green-600';
-    return 'bg-blue-50 text-blue-600';
+    return 'bg-orange-100 text-orange-700';
   };
 
   return (

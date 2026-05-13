@@ -76,17 +76,24 @@ export default function Register({ onBackToLogin }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 bg-slate-100">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="bg-blue-800 p-6 text-center relative">
+        <div className="bg-orange-600 p-6 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0 100 L50 0 L100 100 Z" fill="white" />
+            </svg>
+          </div>
           <button 
             onClick={onBackToLogin}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10"
           >
             <ArrowLeft size={20} />
           </button>
-          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2 backdrop-blur-sm">
-            <UserPlus className="text-white w-6 h-6" />
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/30 rotate-3 transition-transform hover:rotate-0">
+               <UserPlus className="text-white w-8 h-8" />
+            </div>
           </div>
-          <h2 className="text-xl font-bold text-white tracking-tight">Daftar Akun Baru</h2>
+          <h2 className="text-xl font-black text-white tracking-tight uppercase">Daftar Akun Baru</h2>
         </div>
         
         <form onSubmit={handleRegister} className="p-8 space-y-5">
@@ -98,9 +105,9 @@ export default function Register({ onBackToLogin }) {
           )}
 
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">NIK (ID Anggota)</label>
+            <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">NIK (ID Anggota)</label>
             <div className="relative group">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-600">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-orange-600">
                 <BadgeCheck size={18} />
               </div>
               <input
@@ -108,16 +115,16 @@ export default function Register({ onBackToLogin }) {
                 required
                 value={nik}
                 onChange={(e) => setNik(e.target.value.replace(/\D/g, ''))}
-                className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none text-slate-800 transition-all font-medium"
+                className="block w-full pl-10 pr-3 py-3 border-2 border-slate-50 rounded-xl bg-slate-50 focus:bg-white focus:ring-4 focus:ring-orange-600/10 focus:border-orange-600 outline-none text-slate-800 transition-all font-bold"
                 placeholder="Contoh: 12345678"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Nama Lengkap</label>
+            <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Nama Lengkap</label>
             <div className="relative group">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-600">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-orange-600">
                 <User size={18} />
               </div>
               <input
@@ -125,16 +132,16 @@ export default function Register({ onBackToLogin }) {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none text-slate-800 transition-all font-medium"
+                className="block w-full pl-10 pr-3 py-3 border-2 border-slate-50 rounded-xl bg-slate-50 focus:bg-white focus:ring-4 focus:ring-orange-600/10 focus:border-orange-600 outline-none text-slate-800 transition-all font-bold"
                 placeholder="Nama sesuai SK"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Password</label>
+            <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Password</label>
             <div className="relative group">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-600">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-orange-600">
                 <Lock size={18} />
               </div>
               <input
@@ -142,7 +149,7 @@ export default function Register({ onBackToLogin }) {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none text-slate-800 transition-all font-medium"
+                className="block w-full pl-10 pr-3 py-3 border-2 border-slate-50 rounded-xl bg-slate-50 focus:bg-white focus:ring-4 focus:ring-orange-600/10 focus:border-orange-600 outline-none text-slate-800 transition-all font-bold"
                 placeholder="Minimal 6 karakter"
               />
             </div>
@@ -151,13 +158,13 @@ export default function Register({ onBackToLogin }) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-800 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-800/20 transition-all active:scale-95 disabled:opacity-70 flex items-center justify-center space-x-2"
+            className="w-full bg-orange-600 hover:bg-orange-700 text-white font-black py-4 rounded-xl shadow-lg shadow-orange-600/20 transition-all active:scale-95 disabled:opacity-70 flex items-center justify-center space-x-2"
           >
             {loading ? (
               <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
             ) : (
               <>
-                <span>DAFTAR SEKARANG</span>
+                <span className="tracking-widest">DAFTAR SEKARANG</span>
                 <UserPlus size={18} />
               </>
             )}
@@ -165,13 +172,13 @@ export default function Register({ onBackToLogin }) {
         </form>
 
         <div className="px-8 pb-8 text-center">
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-500 text-xs font-bold">
             Sudah punya akun?{' '}
             <button 
               onClick={onBackToLogin}
-              className="text-blue-700 font-bold hover:underline"
+              className="text-orange-600 font-black hover:underline"
             >
-              Masuk di sini
+              MASUK DI SINI
             </button>
           </p>
         </div>
