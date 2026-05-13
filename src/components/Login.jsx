@@ -174,7 +174,7 @@ export default function Login({ onShowRegister }) {
             </button>
           </p>
           <div className="pt-4 border-t border-slate-200">
-            <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest leading-relaxed">
+            <p className="text-slate-400 text-[10px] font-black Proper Case tracking-widest leading-relaxed">
               Tim Reaksi Cepat (TRC)<br />Kabupaten Kulon Progo<br />Dikembangkan oleh<br /> Adi Agus Prihartanto,S.Kom
             </p>
           </div>
