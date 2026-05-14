@@ -112,10 +112,11 @@ export default function Login({ onShowRegister }) {
                 type="text"
                 required
                 value={nik}
-                onChange={(e) => setNik(e.target.value)}
+                onChange={(e) => setNik(e.target.value.replace(/\D/g, '').slice(0, 16))}
+                maxLength={16}
                 autoComplete="username"
                 className="block w-full pl-12 pr-4 py-4 border-2 border-slate-100 rounded-2xl bg-slate-50 focus:bg-white focus:ring-4 focus:ring-orange-600/10 focus:border-orange-600 transition-all outline-none text-slate-800 font-bold placeholder-slate-300"
-                placeholder="000XXX000"
+                placeholder="16 Digit NIK"
               />
             </div>
           </div>

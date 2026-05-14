@@ -15,9 +15,9 @@ export default function Register({ onBackToLogin }) {
     e.preventDefault();
     setError('');
     
-    // Simple validation
-    if (nik.length < 5) {
-      setError('NIK harus minimal 5 digit.');
+    // Strict 16-digit validation
+    if (nik.length !== 16) {
+      setError('NIK harus tepat 16 digit.');
       return;
     }
     if (name.length < 3) {
@@ -114,9 +114,10 @@ export default function Register({ onBackToLogin }) {
                 type="text"
                 required
                 value={nik}
-                onChange={(e) => setNik(e.target.value.replace(/\D/g, ''))}
+                onChange={(e) => setNik(e.target.value.replace(/\D/g, '').slice(0, 16))}
+                maxLength={16}
                 className="block w-full pl-10 pr-3 py-3 border-2 border-slate-50 rounded-xl bg-slate-50 focus:bg-white focus:ring-4 focus:ring-orange-600/10 focus:border-orange-600 outline-none text-slate-800 transition-all font-bold"
-                placeholder="Contoh: 12345678"
+                placeholder="16 Digit NIK Sesuai KTP"
               />
             </div>
           </div>

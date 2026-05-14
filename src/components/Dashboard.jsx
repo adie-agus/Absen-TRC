@@ -20,39 +20,69 @@ import History from './History';
 import ExportMenu from './ExportMenu';
 
 const MASUK_QUOTES = [
-  "Semangat kerjanya! Ingat, cicilan tidak akan lunas kalau cuma rebahan.",
-  "Pagi yang cerah untuk jiwa yang butuh rupiah. Yok gas!",
-  "Kerja keraslah sampai tetanggamu mengira kamu pelihara tuyul.",
-  "Berangkat dengan doa, pulang dengan lega. Jangan lupa sarapan!",
-  "Jangan pernah menyerah. Karena yang menyerah cuma pasrah, yang pasrah biasanya kalah.",
-  "Bangun! Kasurmu tidak akan memberimu uang, kecuali kamu jualan kasur.",
-  "Selamat pagi pejuang rupiah! Ingat, bosmu mau beli mobil baru, jadi kerjalah yang rajin.",
-  "Presensi dulu, ngantuknya ditaruh di laci saja.",
-  "Mata sepet, dompet mepet, yok berangkat!",
-  "Kerja itu ibadah, tapi kalau gajian itu anugerah yang sangat indah.",
-  "Senyum dong! Meskipun hati menangis melihat sisa saldo di pagi hari.",
-  "Ingat tujuan awal: Kerja cari uang, bukan cari jodoh yang sudah jadi milik orang.",
-  "Rejeki itu kayak antrian, kalau nggak sabar ya nggak bakalan dapet.",
-  "Masuk pagi, pulang sore, badan capek, dompet... ah sudahlah.",
-  "Jadilah pegawai teladan, minimal teladan dalam hal absen tepat waktu."
+  "Sirene belum bunyi, tapi hati sudah nyanyi... nyanyi lagu butuh gaji.",
+  "Kulon Progo aman, tapi isi dompet sedang dalam kondisi siaga 1.",
+  "Absen dulu, siapa tahu hari ini ada jatah snack rapat yang tersisa.",
+  "TRC Tangguh! Tangguh menahan kantuk di balik seragam oranye.",
+  "Berangkat pagi demi kemanusiaan, dan demi kuota internet kantor.",
+  "Gunung Merapi terpantau aman, tapi cicilan motor terpantau mendebarkan.",
+  "Semangat! Ingat, bensin kendaraan dinas nggak bisa buat jalan-jalan sore.",
+  "Absen masuk done. Sekarang tinggal ritual ngopi sambil nunggu disposisi.",
+  "Pagi ini saya putuskan jadi pahlawan, minimal pahlawan buat perut sendiri.",
+  "Mata sepet, otak stuck, yang penting absen Masuk!",
+  "Salam Tangguh! Tangguh menghadapi laporan yang tak kunjung padam.",
+  "Jangan malas, ingat BPBD itu Badan Penanggulangan Bencana, bukan Badan Pemalas Dunia.",
+  "Seragam oranye ini bukan baju narapidana, ini baju pejuang keluarga.",
+  "Kulon Progo mendung, moga rejeki mendengung, absen jangan sampai bingung.",
+  "Ingat, gaji ASN/THL itu berkah kalau dipakai buat martabak malam hari.",
+  "Datang tepat waktu adalah prestasi, pulang tepat waktu adalah tradisi.",
+  "Absen sukses! Sekarang tinggal akting sibuk sampai jam istirahat.",
+  "BPBD Jaya! Semoga hari ini nggak ada pohon tumbang, cukup pohon harapan yang tumbuh.",
+  "Semangat Personil! Ingat, pahlawan kesiangan nggak dapet nasi bungkus rapat.",
+  "Kopi kantor hari ini pahit, sehitam masa depan kalau bolos kerja.",
+  "Jadilah personil teladan: datang pertama, ngopi lama, kerja sebisanya.",
+  "Salam Bencana! Penanggulangan bencana dompet kosong dimulai sekarang.",
+  "Air laut Pantai Glagah sedang pasang, semoga semangatmu nggak sedang surut.",
+  "Disiplin adalah kunci, kunci motor jangan sampai hilang pas mau tugas lapangan.",
+  "Pagi yang cerah untuk jiwa yang masih merindukan bantal empuk.",
+  "Absen dulu lur, biar malaikat pencatat amal nggak bingung cari keberadaanmu.",
+  "Kulon Progo memanggil, tapi kasur masih menggandul. Lawan!",
+  "Ingat, kamu TRC, bukan Team Rebahan Ceria. Yok gas!",
+  "Semoga hari ini disposisi lancar selancar boso Jowo-mu.",
+  "Presensi Done. Status: Siaga Mencari Nafkah Halal."
 ];
 
 const PULANG_QUOTES = [
-  "Selamat pulang! Rehat dulu, besok kita cari masalah (kerjaan) lagi.",
-  "Hati-hati di jalan. Kasur sudah merindukanmu lebih dari mantan.",
-  "Selamat istirahat. Otak butuh recharge, dompet butuh isi ulang.",
-  "Pulanglah with pride, meskipun saldo ATM sisa lima ribu saja.",
-  "Jangan lupa bahagia. Kalau lupa, ya coba diingat-ingat lagi pas mandi.",
-  "Hore pulang! Cepat kabur sebelum bos ingat ada kerjaan tambahan.",
-  "Selamat kembali ke peradaban. Jangan lupa mandi, bau matahari itu nyata.",
-  "Misi selesai! Sekarang waktunya jadi beban keluarga di rumah.",
-  "Istirahatlah, besok masih ada cicilan yang menunggumu dengan setia.",
-  "Terima kasih sudah bertahan hari ini. Anda layak mendapatkan paket mie instan.",
-  "Pulanglah! Anak istrimu rindu, atau minimal kasurmu rindu berat.",
-  "Jangan pikirkan kerjaan di jalan, nanti malah nyeruduk tukang bakso.",
-  "Otw kasur! Kecepatan penuh, mode hemat energi diaktifkan.",
-  "Hari ini luar biasa, tapi kasur tetaplah juara dunia.",
-  "Selamat bobo lucu. Besok jangan telat lagi ya!"
+  "Hore pulang! Cepat kabur sebelum ada laporan pohon tumbang mendadak.",
+  "Selamat kembali ke peradaban kasur, pahlawan oranye kebanggaan keluarga.",
+  "Misi selesai: Bertahan hidup di kantor tanpa kena semprot pimpinan.",
+  "Hati-hati di jalan, jangan sampai nyasar ke rumah mantan pas bawa motor dinas.",
+  "Pulanglah! Kasurmu sudah rindu berat, baunya udah minta diganti spreinya.",
+  "Tugas hari ini tamat. Silakan log-out dari urusan birokrasi yang memilukan.",
+  "Hati-hati di jalan lur, ingat anak istri nungguin nasi goreng titipan.",
+  "Selamat beristirahat, besok kita buat laporan fiktif... eh, laporan aktif lagi.",
+  "Absen pulang sukses! Mode: Pura-pura mati dari grup WA kantor aktif.",
+  "Jangan bawa baper kantor ke rumah, bawa martabak aja biar suasana cerah.",
+  "Salam Tangguh! Tangguh dalam menembus kemacetan jalan raya.",
+  "Satu hari lagi terlewati tanpa drama antar bidang. Alhamdulillah.",
+  "Selamat kembali jadi warga sipil biasa, tinggalkan jiwa oranye di gantungan baju.",
+  "Pulang dengan bangga: Berhasil mengisi logbook dengan kalimat-kalimat artistik.",
+  "Ingat, di rumah kamu itu raja, di kantor kamu itu... ya sudahlah.",
+  "Hati-hati bawa motor, ingat helm bukan cuma hiasan kepala biar ganteng.",
+  "Selamat malam pejuang Kulon Progo, moga mimpi indah tanpa bayangan kunker.",
+  "Misi bertahan hidup di kantor sukses! Sekarang waktunya hibernasi.",
+  "Matikan lampu, kunci pintu, jangan lupa rindu sama yang di rumah.",
+  "Hore! Akhirnya bisa lepas dari jeratan dinginnya AC kantor yang nggak berperasaan.",
+  "Selamat pulang, jangan lupa mandi biar nggak dikira habis evakuasi buaya.",
+  "Besok kita berjuang lagi, sekarang biarkan otak beristirahat sejenak.",
+  "Pulang dengan senyum, meskipun gajian masih jauh di ujung bulan.",
+  "Salam Tangguh! Sampai jumpa di medan pengabdian (dan kopi gratis) besok.",
+  "Jangan ngebut, bensin mahal, mending pelan tapi nyampe kasur.",
+  "Akhirnya merdeka dari rapat-rapat yang isinya cuma 'ya silakan'.",
+  "Selamat beristirahat personil, raga kuat hati kalem itu kuncinya.",
+  "Absen pulang beres. Saatnya jadi warga biasa yang hobi rebahan.",
+  "Pekerjaan tuntas, hati puas, perut harus segera diisi yang pedas-pedas.",
+  "Sampai jumpa besok, moga nggak ada surat kaleng yang masuk ke meja."
 ];
 
 export default function Dashboard({ user }) {
@@ -119,8 +149,10 @@ export default function Dashboard({ user }) {
       };
       await setDoc(doc(db, 'absensi', docId), newRecord);
       
-      const randomQuote = MASUK_QUOTES[Math.floor(Math.random() * MASUK_QUOTES.length)];
-      setModalData({ title: 'Presensi Masuk Berhasil!', quote: randomQuote, type: 'masuk' });
+      const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+      const dailyQuoteIndex = dayOfYear % MASUK_QUOTES.length;
+      const dailyQuote = MASUK_QUOTES[dailyQuoteIndex];
+      setModalData({ title: 'Presensi Masuk Berhasil!', quote: dailyQuote, type: 'masuk' });
       setShowModal(true);
       
       await fetchTodayRecord();
@@ -142,8 +174,10 @@ export default function Dashboard({ user }) {
         status: 'pulang'
       });
       
-      const randomQuote = PULANG_QUOTES[Math.floor(Math.random() * PULANG_QUOTES.length)];
-      setModalData({ title: 'Presensi Pulang Berhasil!', quote: randomQuote, type: 'pulang' });
+      const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+      const dailyQuoteIndex = dayOfYear % PULANG_QUOTES.length;
+      const dailyQuote = PULANG_QUOTES[dailyQuoteIndex];
+      setModalData({ title: 'Presensi Pulang Berhasil!', quote: dailyQuote, type: 'pulang' });
       setShowModal(true);
 
       await fetchTodayRecord();
@@ -175,7 +209,7 @@ export default function Dashboard({ user }) {
       <div className="flex items-end justify-between px-2">
         <div>
           <p className="text-slate-500 text-sm font-medium">Selamat Datang,</p>
-          <h2 className="text-2xl font-black text-slate-800 tracking-tight">{user.displayName || 'Anggota TRC'}</h2>
+          <h2 className="text-2xl font-black text-slate-800 tracking-tight">{user.displayName || 'Personil Tangguh'}</h2>
         </div>
         <div className={`px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase ${
           todayRecord ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-500'
@@ -305,7 +339,7 @@ export default function Dashboard({ user }) {
             <Calendar className="text-orange-500 w-5 h-5" />
             <h3 className="font-bold text-slate-700 uppercase tracking-wide text-sm">Riwayat 60 Hari Terakhir</h3>
           </div>
-          <ExportMenu userId={user.uid} userName={user.displayName || 'Anggota TRC'} />
+          <ExportMenu userId={user.uid} userName={user.displayName || 'Personil'} />
         </div>
         <History userId={user.uid} refreshTrigger={todayRecord} />
       </div>
